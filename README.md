@@ -23,3 +23,29 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+## Axios
+
+[Getting Started with Axios](https://axios-http.com/docs/intro)  
+[axios module](https://www.npmjs.com/package/axios)  
+[Google search - free external api for testing](https://www.google.com/search?q=free+external+api+for+testing&sca_esv=40fe89a436fab841&sxsrf=ADLYWIIc5kFm4jvakEfCksz-xNdlEcL35w%3A1737099366837&ei=ZgiKZ4rXMs2L9u8PtLvz-Qc&ved=0ahUKEwiKosy1n_yKAxXNhf0HHbTdPH8Q4dUDCBA&uact=5&oq=free+external+api+for+testing&gs_lp=Egxnd3Mtd2l6LXNlcnAiHWZyZWUgZXh0ZXJuYWwgYXBpIGZvciB0ZXN0aW5nMgcQABiABBgTMggQABiABBiiBDIIEAAYgAQYogQyCBAAGKIEGIkFMggQABiABBiiBDIIEAAYgAQYogRI_TxQAFi0KnACeAGQAQCYAWOgAccVqgECMzG4AQPIAQD4AQGYAiGgAoUWwgIMECMYgAQYExgnGIoFwgIKECMYgAQYJxiKBcICBBAjGCfCAgsQABiABBixAxiDAcICERAuGIAEGLEDGNEDGIMBGMcBwgIKEAAYgAQYQxiKBcICDhAAGIAEGLEDGIMBGIoFwgIIEC4YgAQYsQPCAg4QLhiABBixAxjRAxjHAcICCBAAGIAEGLEDwgIFEAAYgATCAhMQLhiABBixAxjRAxhDGMcBGIoFwgIIEAAYFhgKGB7CAgYQABgWGB7CAgoQABiABBgTGMcDwgIIEAAYExgWGB7CAgoQABgTGBYYChgewgIJEAAYgAQYExgNwgIIEAAYExgNGB6YAwCSBwQyOC41oAeFqAE&sclient=gws-wiz-serp)  
+[JSON Placeholder](https://jsonplaceholder.typicode.com/)  
+
+## Adding external API call
+
+API to access from CAP
+external API call to https://jsonplaceholder.typicode.com/posts
+
+```Json
+{
+"userId": 1,
+"id": 1,
+"title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+"body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
+},
+```
+
+additional files:
+/db/externalApiSrv.cds - define data model
+/srv/externalApiSrv.cds
+/srv/externalApiSrv.js
