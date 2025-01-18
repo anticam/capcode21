@@ -1,0 +1,6 @@
+@url=http://localhost:4004
+
+###
+# Call the external API
+# should return 100 items
+GET {{url}}/odata/v4/external-api/ExternalApi

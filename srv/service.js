@@ -5,4 +5,4 @@ const mysrv = function (srv) {
     
 }
 
-module.exports = mysrv 
+module.exports = mysrv;
