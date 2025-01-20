@@ -49,3 +49,8 @@ create files:
 /db/externalApiSrv.cds - define data model
 /srv/externalApiSrv.cds - service file
 /srv/externalApiSrv.js - implementation of service
+
+---
+https://www.uuidgenerator.net/
+npx uuid
+
