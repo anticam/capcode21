@@ -36,21 +36,40 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 API to access from CAP
 external API call to https://jsonplaceholder.typicode.com/posts
 
-```Json
+```JSON
 {
-"userId": 1,
-"id": 1,
-"title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-"body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
 },
 ```
 
-create files:
+create data model files:
 /db/externalApiSrv.cds - define data model
-/srv/externalApiSrv.cds - service file
+/srv/externalApiSrv.cds - service file, OData service
 /srv/externalApiSrv.js - implementation of service
 
----
-https://www.uuidgenerator.net/
-npx uuid
 
+
+---
+Online UUID generator: 
+https://www.uuidgenerator.net/
+
+Node module to generate UUID:
+npm module `npx uuid`
+
+How to build cds to SQL and to SQLite DB:
+```shell
+cds build
+cds compile db/datamodel.cds -2 sql
+cds deploy --to sqlite:india.db
+```
+
+$self - to compare primary key of this table with another table
+
+in SQL Tools select `New SQL File`
+drag and drop india_db_master_address
+change command to
+`select * from india_db_master_address`
+then run

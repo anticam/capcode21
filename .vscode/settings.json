@@ -33,5 +33,10 @@
       "name": "india.db",
       "database": "india.db"
     }
+  ],
+  "cSpell.words": [
+    "businesspartner",
+    "poitems",
+    "purchaseorder"
   ]
 }
