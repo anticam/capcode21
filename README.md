@@ -73,3 +73,26 @@ drag and drop india_db_master_address
 change command to
 `select * from india_db_master_address`
 then run
+
+adding OData V2 support
+deprecated package: https://www.npmjs.com/package/@sap/cds-odata-v2-adapter-proxy
+recommended package: https://www.npmjs.com/package/@cap-js-community/odata-v2-adapter
+
+run `npm add @cap-js-community/odata-v2-adapter`
+
+with 
+`service catalogservice { ...}`
+there will be 
+`/odata/v4/catalogservice/`
+
+while with `service CatalogService { ..}`
+there will be
+`/odata/v4/Catalog`
+until first uppercase character
+
+with 
+`service CatalogService @(path: '/CatalogService') { ... }`
+the service path will be 
+`/CatalogService`
+
+https://cap.cloud.sap/docs/node.js/cds-serve#at
