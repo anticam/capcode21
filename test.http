@@ -5,10 +5,160 @@
 # should return 100 items
 GET {{url}}/odata/v4/external-api/ExternalApi
 
-###
+### OData 
 # get businesspartners
 GET {{url}}/CatalogService/businesspartner
 
 ###
 # number of business partners
+# $count
 GET {{url}}/CatalogService/businesspartner/$count
+
+###
+# number of business partners
+# $top
+GET {{url}}/CatalogService/businesspartner/$top=2
+
+
+###
+# number of business partners
+# $select node ID
+GET {{url}}/CatalogService/businesspartner?select=NODE_KEY,COMPANY_NAME
+
+###
+# address table
+# 
+GET {{url}}/CatalogService/address
+
+###
+# address table
+# 
+GET {{url}}/CatalogService/address/$count
+
+
+###
+# associations
+# expand
+GET {{url}}/CatalogService/address?$expand=businesspartner
+
+###
+# associations
+# expand
+GET {{url}}/CatalogService/poitems
+
+###
+# associations
+# expand
+GET {{url}}/CatalogService/poitems/$count
+
+###
+# associations
+# expand
+GET {{url}}/CatalogService/poitems?$expand=PARENT_KEY
+
+###
+# navigation up to 2 levels
+# expand
+GET {{url}}/CatalogService/poitems?$expand=PARENT_KEY($expand=PARTNER_GUID)
+
+###
+# CRUD operation
+# create, read, update ,delete
+POST {{url}}/CatalogService/businesspartner
+Content-Type: application/json
+
+{
+    "NODE_KEY": "d4bca6b4-71c8-4f7f-baa2-2d62ac743978",
+    "BP_ROLE": 1,
+    "EMAIL_ADDRESS": "anticam@gmail.com",
+    "PHONE_NUMBER": 5436534,
+    "FAX_NUMBER": 465354,
+    "WEB_ADDRESS": "www.anticam.com",
+    "ADDRESS_GUID_NODE_KEY": "b671a6dc-b8d3-4cc4-bba4-9d5952816b0b",
+    "BP_ID": 1001,
+    "COMPANY_NAME": "anticam"
+}
+
+###
+# CRUD operation
+# PATCH - update records, do not change other values
+# create, read, update ,delete
+PATCH {{url}}/CatalogService/businesspartner/d4bca6b4-71c8-4f7f-baa2-2d62ac743978
+Content-Type: application/json
+
+{
+    "BP_ID": 9999,
+    "COMPANY_NAME": "anticam21"
+}
+
+
+###
+# CRUD operation
+# create, read, update ,delete
+POST {{url}}/CatalogService/businesspartner
+Content-Type: application/json
+
+{
+    "NODE_KEY": "fff198d9-c583-4dab-a44e-12ccff48a283",
+    "BP_ROLE": 1,
+    "EMAIL_ADDRESS": "anticam@gmail.com",
+    "PHONE_NUMBER": 5436534,
+    "FAX_NUMBER": 465354,
+    "WEB_ADDRESS": "www.anticam.com",
+    "ADDRESS_GUID_NODE_KEY": "b671a6dc-b8d3-4cc4-bba4-9d5952816b0b",
+    "BP_ID": 1001,
+    "COMPANY_NAME": "anticam"
+}
+
+###
+# CRUD operation
+# create, read, update ,delete
+PUT {{url}}/CatalogService/businesspartner
+Content-Type: application/json
+
+{
+    "NODE_KEY": "fff198d9-c583-4dab-a44e-12ccff48a283",
+    "EMAIL_ADDRESS": "anticam22@gmail.com",
+    "PHONE_NUMBER": 54365348
+}
+
+###
+# CRUD operation
+# create, read, update ,delete
+# PUT - changes other values to null
+PUT {{url}}/CatalogService/businesspartner/fff198d9-c583-4dab-a44e-12ccff48a283
+Content-Type: application/json
+
+{
+    "EMAIL_ADDRESS": "anticam22@gmail.com",
+    "PHONE_NUMBER": 54365348
+}
+
+###
+GET {{url}}/CatalogService/address/4aad1e3b-a70a-4a26-9521-5990f3519
+
+###
+# CRUD operation
+# create, read, update ,delete
+POST {{url}}/CatalogService/address
+Content-Type: application/json
+
+{
+    "NODE_KEY": "b671a6dc-b8d3-4cc4-bba4-9d5952816b0b",
+    "CITY": "New York",
+    "POSTAL_CODE": "10001",
+    "STREET": "5th Avenue",
+    "BUILDING": "123",
+    "COUNTRY": "USA",
+    "ADDRESS_TYPE": "Business",
+    "VAL_START_DATE": "2020-01-01",
+    "VAL_END_DATE": "2020-12-31",
+    "LATITUDE": 40.7128,
+    "LONGITUDE": 74.0060
+}
+
+
+###
+# CRUD operation
+# Delete
+DELETE {{url}}/CatalogService/businesspartner/fff198d9-c583-4dab-a44e-12ccff48a283
