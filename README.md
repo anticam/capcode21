@@ -96,3 +96,11 @@ the service path will be
 `/CatalogService`
 
 https://cap.cloud.sap/docs/node.js/cds-serve#at
+
+
+list of businesspartners
+http://localhost:4004/CatalogService/businesspartner
+
+number of business partners
+http://localhost:4004/CatalogService/businesspartner/$count
+

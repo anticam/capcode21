@@ -4,3 +4,11 @@
 # Call the external API
 # should return 100 items
 GET {{url}}/odata/v4/external-api/ExternalApi
+
+###
+# get businesspartners
+GET {{url}}/CatalogService/businesspartner
+
+###
+# number of business partners
+GET {{url}}/CatalogService/businesspartner/$count
