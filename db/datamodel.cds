@@ -1,6 +1,19 @@
 namespace india.db;
 
 context master {
+
+    entity worker {
+        key ID           : UUID;
+            firstName    : String(30);
+            lastName     : String(30);
+            Gender       : String(10);
+            phoneNumber  : String(10);
+            email        : String(30);
+            Currency     : String(3);
+            salaryAmount : Decimal(15, 2);
+    }
+
+
     entity businesspartner {
         key NODE_KEY      : String(50); //UUID;
             BP_ROLE       : Integer;

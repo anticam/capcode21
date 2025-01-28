@@ -104,3 +104,10 @@ http://localhost:4004/CatalogService/businesspartner
 number of business partners
 http://localhost:4004/CatalogService/businesspartner/$count
 
+
+004
+in browser set preferred language to German to see translated text
+
+key ID : UUID  
+CAP service populates UUID automatically  
+[techtarget.com - What is UUID](https://www.techtarget.com/searchapparchitecture/definition/UUID-Universal-Unique-Identifier)  
