@@ -1,9 +1,11 @@
 namespace india.db;
+using { cuid } from '@sap/cds/common';
 
 context master {
 
-    entity worker {
-        key ID           : UUID;
+    entity worker: cuid {
+        
+       // key ID           : UUID; // or cuid
             firstName    : String(30);
             lastName     : String(30);
             Gender       : String(10);

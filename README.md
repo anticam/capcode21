@@ -105,9 +105,36 @@ number of business partners
 http://localhost:4004/CatalogService/businesspartner/$count
 
 
-004
+###### 004
 in browser set preferred language to German to see translated text
 
 key ID : UUID  
 CAP service populates UUID automatically  
 [techtarget.com - What is UUID](https://www.techtarget.com/searchapparchitecture/definition/UUID-Universal-Unique-Identifier)  
+
+##### 005
+[Common types and aspects](https://cap.cloud.sap/docs/cds/common#)  
+Apects:
+
+- CAP delivered aspects in `@sap/cds/common`
+- Custom created aspects
+
+in .cds file:
+
+```CDS
+
+using {cuid} from '@sap/cds/common';
+
+entity worker: cuid {
+
+```
+
+same as
+
+```CDS
+
+
+entity worker: {
+    key ID: UUID;
+
+```
