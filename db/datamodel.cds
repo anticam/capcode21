@@ -1,9 +1,9 @@
 namespace india.db;
-using { cuid } from '@sap/cds/common';
+using { cuid, managed } from '@sap/cds/common';
 
 context master {
 
-    entity worker: cuid {
+    entity worker: cuid, managed {
         
        // key ID           : UUID; // or cuid
             firstName    : String(30);
@@ -16,7 +16,7 @@ context master {
     }
 
 
-    entity businesspartner {
+    entity businesspartner: managed {
         key NODE_KEY      : String(50); //UUID;
             BP_ROLE       : Integer;
             EMAIL_ADDRESS : String(50);
