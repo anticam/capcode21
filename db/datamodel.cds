@@ -70,7 +70,7 @@ context master {
 }
 
 context transaction {
-    entity purchaseorder {
+    entity purchaseorder: customAspect.Amount {
         key NODE_KEY         : String(50);
             PO_ID            : String(24);
             PARTNER_GUID     : Association to one master.businesspartner;
@@ -80,11 +80,12 @@ context transaction {
                                    on Items.PARENT_KEY = $self;
     }
 
-    entity poitems {
+    entity poitems : customAspect.Amount {
         key NODE_KEY     : String(50);
             PARENT_KEY   : Association to one purchaseorder;
             PO_ITEM_POS  : Integer;
             PRODUCT_GUID : Association to one master.product;
+            GROSS_AMOUNT: Decimal(15,2);
     }
 
 }
