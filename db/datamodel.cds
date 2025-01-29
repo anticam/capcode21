@@ -1,34 +1,40 @@
 namespace india.db;
 
-using { cuid, managed } from '@sap/cds/common';
-using { india.customAspect } from './customAspect';
+using {
+    cuid,
+    managed
+} from '@sap/cds/common';
+using {india.customAspect} from './customAspect';
 
 
 context master {
 
-    entity worker: cuid, managed {
-        
-       // key ID           : UUID; // or cuid
-            firstName    : String(30);
-            lastName     : String(30);
-        Gender       : customAspect.Gender;  //String(10);
-        phoneNumber  : customAspect.phoneNumber;  //String(10);
+    entity worker : cuid, managed {
+
+        // key ID           : UUID; // or cuid
+        firstName    : String(30);
+        lastName     : String(30);
+        Gender       : customAspect.Gender; //String(10);
+        phoneNumber  : customAspect.phoneNumber; //String(10);
         email        : customAspect.Email; //String(30);
-            Currency     : String(3);
-            salaryAmount : Decimal(15, 2);
+        Currency     : String(3);
+        salaryAmount : Decimal(15, 2);
     }
 
 
-    entity businesspartner: managed {
-        key NODE_KEY      : String(50); //UUID;
-            BP_ROLE       : Integer;
-            EMAIL_ADDRESS : String(50);
-            PHONE_NUMBER  : Integer; //String(50); // Integer;
-            FAX_NUMBER    : Integer; //String(50); // Integer;
-            WEB_ADDRESS   : String(256);
-            ADDRESS_GUID  : Association to one address; //String(50); //UUID; // String(50);
-            BP_ID         : Integer;
-            COMPANY_NAME  : String(10);
+    entity businesspartner : managed {
+        key NODE_KEY      : String(50)                 @title: '{i18n > bp_key}';
+            BP_ROLE       : Integer                    @title: '{i18n > bp_role}';
+            EMAIL_ADDRESS : String(50)                 @title: '{i18n > email_address}';
+            PHONE_NUMBER  : Integer                    @title: '{i18n > phone_number}'; //String(50); // Integer;
+
+            FAX_NUMBER    : Integer                    @title: '{i18n > fax_number}'; //String(50); // Integer;
+
+            WEB_ADDRESS   : String(256)                @title: '{i18n > web_address}';
+            ADDRESS_GUID  : Association to one address @title: '{i18n > address_guid}'; //String(50); //UUID; // String(50);
+
+            BP_ID         : Integer                    @title: '{i18n > bp_id}';
+            COMPANY_NAME  : String(10)                 @title: '{i18n > company_name}';
     }
 
     entity address {
@@ -70,7 +76,7 @@ context master {
 }
 
 context transaction {
-    entity purchaseorder: customAspect.Amount {
+    entity purchaseorder : customAspect.Amount {
         key NODE_KEY         : String(50);
             PO_ID            : String(24);
             PARTNER_GUID     : Association to one master.businesspartner;
@@ -85,7 +91,7 @@ context transaction {
             PARENT_KEY   : Association to one purchaseorder;
             PO_ITEM_POS  : Integer;
             PRODUCT_GUID : Association to one master.product;
-            GROSS_AMOUNT: Decimal(15,2);
+            GROSS_AMOUNT : Decimal(15, 2);
     }
 
 }
