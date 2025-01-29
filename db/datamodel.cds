@@ -1,5 +1,8 @@
 namespace india.db;
+
 using { cuid, managed } from '@sap/cds/common';
+using { india.customAspect } from './customAspect';
+
 
 context master {
 
@@ -8,9 +11,9 @@ context master {
        // key ID           : UUID; // or cuid
             firstName    : String(30);
             lastName     : String(30);
-            Gender       : String(10);
-            phoneNumber  : String(10);
-            email        : String(30);
+        Gender       : customAspect.Gender;  //String(10);
+        phoneNumber  : customAspect.phoneNumber;  //String(10);
+        email        : customAspect.Email; //String(30);
             Currency     : String(3);
             salaryAmount : Decimal(15, 2);
     }

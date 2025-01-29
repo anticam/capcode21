@@ -138,3 +138,12 @@ entity worker: {
     key ID: UUID;
 
 ```
+
+006
+
+custom aspects
+email validation:
+https://www.mailercheck.com/articles/email-validation-javascript  
+https://support.boldsign.com/kb/article/15962/how-to-create-regular-expressions-regex-for-email-address-validation  
+https://ihateregex.io/expr/phone/
+https://regex101.com/  

@@ -162,3 +162,21 @@ Content-Type: application/json
 # CRUD operation
 # Delete
 DELETE {{url}}/CatalogService/businesspartner/fff198d9-c583-4dab-a44e-12ccff48a283
+
+
+###
+GET {{url}}//CatalogService/worker
+
+###
+POST {{url}}/CatalogService/worker
+Content-Type: application/json
+
+{
+"firstName": "John",
+"lastName": "Smith",
+"Gender": "M",
+"phoneNumber": "+1435400237",
+"email": "john.boss@bmi.com",
+"Currency": "EUR",
+"salaryAmount": 1000
+}
