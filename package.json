@@ -17,10 +17,7 @@
   },
   "scripts": {
     "start": "cds-serve"
-  },
-
-  "cds" : {
-    "i18n": {  "for_sqlite": [ "en", "de", "fr" ]  }
   }
+
 
 }

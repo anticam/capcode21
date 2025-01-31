@@ -9,6 +9,13 @@ GET {{url}}/odata/v4/external-api/ExternalApi
 # get businesspartners
 GET {{url}}/CatalogService/businesspartner
 
+
+
+### OData 
+# get businesspartners in German
+GET {{url}}/CatalogService/businesspartner
+Accept-Language: de;q=0.8,hu;q=0.7,hu-HU;q=0.6
+
 ###
 # number of business partners
 # $count
