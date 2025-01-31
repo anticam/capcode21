@@ -147,3 +147,6 @@ https://www.mailercheck.com/articles/email-validation-javascript
 https://support.boldsign.com/kb/article/15962/how-to-create-regular-expressions-regex-for-email-address-validation  
 https://ihateregex.io/expr/phone/
 https://regex101.com/  
+
+010
+@readonly entity - no POST method enabled

@@ -179,11 +179,50 @@ POST {{url}}/CatalogService/worker
 Content-Type: application/json
 
 {
-"firstName": "John",
-"lastName": "Smith",
-"Gender": "M",
-"phoneNumber": "+1435400237",
-"email": "john.boss@bmi.com",
-"Currency": "EUR",
-"salaryAmount": 1000
+    "firstName": "John",
+    "lastName": "Smith",
+    "Gender": "M",
+    "phoneNumber": "+1435400237",
+    "email": "john.boss@bmi.com",
+    "Currency": "EUR",
+    "salaryAmount": 1000
+}
+
+
+###
+# /CDSViewSRV/PODetails
+# /CDSViewSRV/ItemView
+# /CDSViewSRV/ProductSum
+GET {{url}}/CDSViewSRV/ItemView
+
+### 
+# POST operation fails with views
+POST {{url}}/CDSViewSRV/ItemView
+Content-Type: application/json
+
+{
+    "VendorID": "2951c2be-8176-4527-a457-f1aeff77cbb4",
+    "ProductID": "63a4776c-c8ed-4784-ab68-7722838f10fa",
+    "Currency": "GBP",
+    "NetAmount": 870,
+    "TaxAmount": 5,
+    "POStatus": "D"
+}
+
+###
+GET {{url}}/CatalogService/worker
+
+
+###
+POST {{url}}/CatalogService/worker
+Content-Type: application/json
+
+{
+    "firstName": "Antika",
+    "lastName": "Kumar",
+    "Gender": "M",
+    "phoneNumber": "+361277888888",
+    "email": "antika.kumar@gmail.com",
+    "Currency": "INR",
+    "salaryAmount": 8984
 }
