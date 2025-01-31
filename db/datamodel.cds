@@ -23,18 +23,18 @@ context master {
 
 
     entity businesspartner : managed {
-        key NODE_KEY      : String(50)                 @title: '{i18n>bp_key}';
-            BP_ROLE       : Integer                    @title: '{i18n>bp_role}';
-            EMAIL_ADDRESS : String(50)                 @title: '{i18n>email_address}';
-            PHONE_NUMBER  : Integer                    @title: '{i18n>phone_number}'; //String(50); // Integer;
+        key NODE_KEY : String(50);//                 @title: '{i18n>bp_key}';
+            BP_ROLE  : Integer;//                    @title: '{i18n>bp_role}';
+            EMAIL_ADDRESS : String(50);//                 @title: '{i18n>email_address}';
+            PHONE_NUMBER  : Integer;//                    @title: '{i18n>phone_number}'; //String(50); // Integer;
 
-            FAX_NUMBER    : Integer                    @title: '{i18n>fax_number}'; //String(50); // Integer;
+            FAX_NUMBER    : Integer;//                    @title: '{i18n>fax_number}'; //String(50); // Integer;
 
-            WEB_ADDRESS   : String(256)                @title: '{i18n>web_address}';
+            WEB_ADDRESS   : String(256); //                @title: '{i18n>web_address}';
             ADDRESS_GUID  : Association to one address; // @title: '{i18n > address_guid}'; //String(50); //UUID; // String(50);
 
-            BP_ID         : Integer                    @title: '{i18n>bp_id}';
-            COMPANY_NAME  : String(10)                 @title: '{i18n>company_name}';
+            BP_ID         : Integer; //                    @title: '{i18n>bp_id}';
+            COMPANY_NAME  : String(10);//                 @title: '{i18n>company_name}';
     }
 
     entity address {
