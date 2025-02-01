@@ -150,3 +150,15 @@ https://regex101.com/
 
 010
 @readonly entity - no POST method enabled
+
+```JavaScript
+entity Foo @(Capabilities:{
+  // entity-level
+  InsertRestrictions.Insertable: false,
+  UpdateRestrictions.Updatable: false,
+  DeleteRestrictions.Deletable: false
+}) {
+  // element-level
+  @Core.Computed foo : String
+}
+```

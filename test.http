@@ -168,8 +168,7 @@ Content-Type: application/json
 ###
 # CRUD operation
 # Delete
-DELETE {{url}}/CatalogService/businesspartner/fff198d9-c583-4dab-a44e-12ccff48a283
-
+DELETE {{url}}/CatalogService/businesspartner/4aad1e3b-a70a-4a26-9521-5990f3519b51
 
 ###
 GET {{url}}//CatalogService/worker
