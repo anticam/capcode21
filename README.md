@@ -185,3 +185,12 @@ https://cap.cloud.sap/docs/cds/aspects
 | DELETE | DELETE |
 
 
+###### 013
+[Actions ad functions](https://cap.cloud.sap/docs/guides/providing-services#actions-functions)  
+
+- Actions modify data in the server, write only, no read, side effects.
+- Functions retrieve data, read only, no write, no side effects.
+
+[Providing Services](https://cap.cloud.sap/docs/guides/providing-services)
+
+[Hooks: on, before, ater](https://cap.cloud.sap/docs/guides/providing-services#hooks-on-before-after)
