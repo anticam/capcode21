@@ -139,7 +139,7 @@ entity worker: {
 
 ```
 
-006
+###### 006
 
 custom aspects
 email validation:
@@ -148,7 +148,7 @@ https://support.boldsign.com/kb/article/15962/how-to-create-regular-expressions-
 https://ihateregex.io/expr/phone/
 https://regex101.com/  
 
-010
+###### 010
 @readonly entity - no POST method enabled
 
 ```JavaScript
@@ -163,7 +163,7 @@ entity Foo @(Capabilities:{
 }
 ```
 
-011
+###### 011
 CQL - CDS Query Language
 DDL - Data Definition Language (create, drop, alter, trunace, rename, ...)
 DQL - Data Query Language (select)
@@ -174,3 +174,13 @@ TCL - Transaction Control Language (commit, rollback, ...)
 https://cap.cloud.sap/docs/node.js/cds-ql
 https://cap.cloud.sap/docs/cds/cdl#aspects
 https://cap.cloud.sap/docs/cds/aspects
+
+
+| HTTP   | SQL  |
+| -----  | ---- |
+| GET    | READ |
+| POST   | INSERT |
+| PUT    | UPDATE |
+| DELETE | DELETE |
+
+

@@ -225,3 +225,63 @@ Content-Type: application/json
     "Currency": "INR",
     "salaryAmount": 8984
 }
+
+
+###
+# expected 405 Method Not Allowed
+GET {{url}}/odata/v4/new-cql/insertWorker
+###
+POST {{url}}/odata/v4/new-cql/insertWorker
+Content-Type: application/json
+
+{
+    "firstName": "Antikumar",
+    "lastName": "K.Reddy",
+    "Gender": "M",
+    "phoneNumber": "+155589679879",
+    "email": "antikumar.kreddy@gmail.com",
+    "Currency": "EUR",
+    "salaryAmount": 100000          
+}
+
+###
+# PUT operation - UPDATE
+# will fail with 405 Method Not Allowed
+PUT {{url}}/odata/v4/new-cql/updateWorker
+Content-Type: application/json
+
+{
+    "ID": "2d0edb73-9172-4de0-907c-97b4ad69d575",
+    "firstName": "Anti",
+    "lastName": "Atika",
+    "Gender": "M",
+    "phoneNumber": "+155589679879",
+    "email": "antikumar.kreddy@gmail.com",
+    "Currency": "EUR",
+    "salaryAmount": 100000          
+}
+
+###
+# PUT operation - UPDATE
+# only firstName and lastName are updated
+PUT {{url}}/odata/v4/new-cql/updateWorker/2d0edb73-9172-4de0-907c-97b4ad69d575
+Content-Type: application/json
+
+{
+    "firstName": "Anti",
+    "lastName": "Atika",
+    "Gender": "M",
+    "phoneNumber": "+155589679879",
+    "email": "antikumar.kreddy@gmail.com",
+    "Currency": "EUR",
+    "salaryAmount": 100000          
+}
+
+###
+# DELETE operation - DELETE
+# only firstName and lastName are updated
+DELETE {{url}}/odata/v4/new-cql/deleteWorker/9e68f4e6-4da7-47e1-b202-aacf77befdf5
+
+
+###
+GET {{url}}/odata/v4/new-cql/deleteWorker

@@ -37,8 +37,11 @@
   "cSpell.words": [
     "businesspartner",
     "cuid",
+    "deleteonly",
     "Insertable",
+    "insertonly",
     "poitems",
-    "purchaseorder"
+    "purchaseorder",
+    "updateonly"
   ]
 }
