@@ -162,3 +162,15 @@ entity Foo @(Capabilities:{
   @Core.Computed foo : String
 }
 ```
+
+011
+CQL - CDS Query Language
+DDL - Data Definition Language (create, drop, alter, trunace, rename, ...)
+DQL - Data Query Language (select)
+DML - Data Manipulation Language (insert, update, delete, ...)
+DCL - Data Control Language (grant, revoke, ...)
+TCL - Transaction Control Language (commit, rollback, ...)
+
+https://cap.cloud.sap/docs/node.js/cds-ql
+https://cap.cloud.sap/docs/cds/cdl#aspects
+https://cap.cloud.sap/docs/cds/aspects
