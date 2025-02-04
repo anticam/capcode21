@@ -1,7 +1,10 @@
-module.exports = cds.service.impl(async (srv) => {
-    const { worker } = this.entities;
+const cdsServe = require("@sap/cds/lib/srv/cds-serve");
 
-    this.on('hike', async (req) => {
+module.exports = cds.service.impl(async (srv) => {
+    const { worker } = cds.entities ;
+    // const { worker } = this.entities;
+
+    srv.on('hike', async (req) => {
         const { ID } = req.data;
 
         if (!ID) {
@@ -13,7 +16,7 @@ module.exports = cds.service.impl(async (srv) => {
         const tx = cds.transaction(req);
         try {
             // Retrieve the current salary amount of Worker
-            const workers = await tx.read(worker).where({ ID: ID });
+            const workers = await tx.read(worker).where({ 'ID': ID });
             if (!workers.length) {
                 await tx.rollback();
                 return req.reject(404, `Worker with ID ${ID} not found`);
@@ -47,5 +50,5 @@ module.exports = cds.service.impl(async (srv) => {
             
             return req.reject(500, `Error occurred while incrementing salary for Worker with ID ${ID}`);
         }
-    )
+    });
 })

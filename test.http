@@ -285,3 +285,15 @@ DELETE {{url}}/odata/v4/new-cql/deleteWorker/9e68f4e6-4da7-47e1-b202-aacf77befdf
 
 ###
 GET {{url}}/odata/v4/new-cql/deleteWorker
+
+
+###
+GET {{url}}/odata/v4/increment/Worker
+
+###
+POST {{url}}/odata/v4/increment/hike
+Content-Type: application/json
+
+{
+    "ID": "53027271-0f4b-4c0e-9fe4-7b367e75425b"
+}
