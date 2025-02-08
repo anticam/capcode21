@@ -286,14 +286,27 @@ DELETE {{url}}/odata/v4/new-cql/deleteWorker/9e68f4e6-4da7-47e1-b202-aacf77befdf
 ###
 GET {{url}}/odata/v4/new-cql/deleteWorker
 
+###
+
+# @name workers
+GET {{url}}/odata/v4/increment/Worker
 
 ###
-GET {{url}}/odata/v4/increment/Worker
+
+@firstID = {{workers.response.body.$.value[0].ID}}
 
 ###
 POST {{url}}/odata/v4/increment/hike
 Content-Type: application/json
 
 {
-    "ID": "0ba70710-42eb-45b1-9264-012ca0f3c040"
+    "ID": "{{firstID}}"
 }
+
+// get highsalary Worker
+###
+GET {{url}}/odata/v4/highsalary/Worker
+
+// getHighestSalary()
+###
+GET {{url}}/odata/v4/highsalary/getHighestSalary()

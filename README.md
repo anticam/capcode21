@@ -194,3 +194,45 @@ https://cap.cloud.sap/docs/cds/aspects
 [Providing Services](https://cap.cloud.sap/docs/guides/providing-services)
 
 [Hooks: on, before, ater](https://cap.cloud.sap/docs/guides/providing-services#hooks-on-before-after)
+
+Transaction sample: https://github.com/SAP-samples/cloud-cap-samples/blob/23bea0f62947ff6c0d1908e7edf4359b328ee380/reviews/srv/reviews-service.js
+na be
+
+
+REST Client - to get first worker ID and increase its salaryuy
+https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+
+```rest
+
+###
+
+# @name workers
+GET {{url}}/odata/v4/increment/Worker
+
+###
+
+@firstID = {{workers.response.body.$.value[0].ID}}
+
+###
+POST {{url}}/odata/v4/increment/hike
+Content-Type: application/json
+
+{
+    "ID": "{{firstID}}"
+}
+
+```
+
+Another way to implement services using @impl:
+https://cap.cloud.sap/docs/node.js/core-services#implementing-services
+
+Without incrementLogic.cds file
+extend service.cds file
+```
+@mpl: './incrementLogic.js'
+service increment {
+  entity Worker as projection on master.worker;
+  action hike(ID:UUID)
+}
+```

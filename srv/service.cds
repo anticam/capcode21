@@ -15,6 +15,7 @@ service CatalogService @(path: '/CatalogService') {
 
 
     entity address         as projection on master.address;
+
     annotate CatalogService.address with @(Capabilities: {
         InsertRestrictions: {Insertable: false},
         UpdateRestrictions: {Updatable: false},
@@ -23,6 +24,7 @@ service CatalogService @(path: '/CatalogService') {
 
 
     entity product         as projection on master.product;
+
     annotate CatalogService.product with @(Capabilities: {
         InsertRestrictions: {Insertable: false},
         UpdateRestrictions: {Updatable: false},
@@ -31,6 +33,7 @@ service CatalogService @(path: '/CatalogService') {
 
 
     entity purchaseorder   as projection on transaction.purchaseorder;
+
     annotate CatalogService.purchaseorder with @(Capabilities: {
         InsertRestrictions: {Insertable: false},
         UpdateRestrictions: {Updatable: false},
@@ -39,6 +42,7 @@ service CatalogService @(path: '/CatalogService') {
 
 
     entity poitems         as projection on transaction.poitems;
+
     annotate CatalogService.poitems with @(Capabilities: {
         InsertRestrictions: {Insertable: false},
         UpdateRestrictions: {Updatable: false},
@@ -48,4 +52,18 @@ service CatalogService @(path: '/CatalogService') {
 
     @readonly
     entity worker          as projection on master.worker;
+}
+
+// Action implementation
+//@impl: './incrementLogic.js'
+//service increment {
+//    entity Worker as projection on master.worker;
+//    action hike( ID: UUID );
+//}
+
+// Function implementation
+@impl: './highSal.js'
+service highsalary {
+    entity Worker as projection on master.worker;
+    function getHighestSalary() returns Decimal(15,2);
 }
